@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MBS Home Improvement | North Richland Hills, TX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #FFFFFF;
+      --off-white: #F8F6F2;
+      --stone: #E8E2D9;
+      --dark: #1C1C1C;
+      --mid: #5C5C5C;
+      --gold: #B8933E;
+      --gold-light: #D4AD5A;
+      --green: #2D4A3E;
+      --green-light: #3D6354;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off-white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-logo-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo-sub {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--dark); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: var(--white) !important;
+      padding: 0.65rem 1.5rem !important;
+      border-radius: 100px !important;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--green-light) !important; color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--green);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      bottom: -2rem;
+      left: -1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 22rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2.5rem;
+      width: fit-content;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 400px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-outline-white:hover { border-color: white; transform: translateY(-2px); }
+
+    .hero-right {
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-right-inner {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+      margin: 3rem 3rem 0 0;
+      border-radius: 16px 16px 0 0;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-bottom: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.3) 100%);
+      z-index: 1;
+    }
+
+    .hero-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hero-placeholder svg { width: 60px; height: 60px; opacity: 0.15; }
+
+    .hero-placeholder p {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .hero-card-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .hero-card-text span {
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+
+    /* STATS */
+    .stats {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .stat-item {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--stone);
+      text-align: center;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 8rem 5rem;
+      background: var(--off-white);
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.15;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      margin-top: 5rem;
+      align-items: start;
+    }
+
+    .services-intro p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--stone);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .service-icon-wrap {
+      width: 48px;
+      height: 48px;
+      background: var(--off-white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--mid);
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 650px;
+    }
+
+    .about-left {
+      padding: 6rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-left h2 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-left p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      width: fit-content;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-green:hover { background: var(--green-light); transform: translateY(-2px); }
+
+    .about-right {
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-right::before {
+      content: 'MBS';
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 14rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .about-nikolay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .nikolay-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 3px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 auto 1.5rem;
+    }
+
+    .nikolay-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .nikolay-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .nikolay-quote {
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* HOURS */
+    .hours {
+      padding: 6rem 5rem;
+      background: var(--white);
+    }
+
+    .hours-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      margin-top: 4rem;
+      align-items: start;
+    }
+
+    .hours-intro p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-top: 1.5rem;
+    }
+
+    .hours-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--stone);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.75rem;
+      border-bottom: 1px solid var(--stone);
+      transition: background 0.2s;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row:hover { background: var(--off-white); }
+
+    .hours-day {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .hours-time {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--mid);
+    }
+
+    .hours-closed-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      background: #FEF2F2;
+      color: #DC2626;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      padding: 8rem 5rem;
+      background: var(--off-white);
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--stone);
+      position: relative;
+    }
+
+    .review-card:first-child {
+      grid-column: span 2;
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .review-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
+
+    .review-card:first-child .review-stars { color: var(--gold-light); }
+
+    .review-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .review-card:first-child .review-text {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+    }
+
+    .review-author {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+
+    .review-card:first-child .review-author { color: var(--white); }
+
+    .review-date { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
+    .review-card:first-child .review-date { color: rgba(255,255,255,0.4); }
+
+    .review-quote {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(0,0,0,0.04);
+      line-height: 1;
+    }
+
+    .review-card:first-child .review-quote { color: rgba(255,255,255,0.06); }
+
+    /* CONTACT */
+    .contact {
+      background: var(--off-white);
+      padding: 8rem 5rem;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-left h2 { margin-bottom: 1rem; }
+
+    .contact-left p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 3rem;
+    }
+
+    .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--green);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-detail-value {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--stone);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--off-white);
+      border: 1.5px solid var(--stone);
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input::placeholder { color: #BCBCBC; }
+    .form-input:focus { border-color: var(--green); }
+
+    textarea.form-input { resize: vertical; min-height: 130px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      padding: 2.5rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left > * { animation: fadeUp 0.6s ease both; }
+    .hero-tag { animation-delay: 0.1s; }
+    h1 { animation-delay: 0.2s; }
+    .hero-sub { animation-delay: 0.32s; }
+    .hero-buttons { animation-delay: 0.44s; }
+
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 8rem 2rem 5rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .services, .about, .hours, .reviews, .contact { padding: 5rem 1.5rem; }
+      .services-layout, .hours-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .about { grid-template-columns: 1fr; }
+      .about-right { min-height: 300px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .review-card:first-child { grid-column: span 1; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-main">MBS Home Improvement</div>
+      <div class="nav-logo-sub">North Richland Hills, TX</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">MBS</div>
+    <div class="hero-left">
+      <div class="hero-tag">North Richland Hills, TX</div>
+      <h1>Your Home,<br/><em>Beautifully</em><br/>Improved.</h1>
+      <p class="hero-sub">MBS Home Improvement brings craftsmanship, honesty, and reliability to every project — from bathroom remodels to plumbing, painting, and beyond.</p>
+      <div class="hero-buttons">
+        <a href="tel:19095344519" class="btn-gold">Call (909) 534-4519</a>
+        <a href="#services" class="btn-outline-white">See Our Work</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-inner">
+        <div class="hero-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <p>Add Project Photo</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">⭐</div>
+          <div class="hero-card-text">
+            <strong>5.0 Google Rating</strong>
+            <span>Trusted by DFW homeowners</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item">
+      <span class="stat-num">5.0</span>
+      <span class="stat-label">Google Rating</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">5-Star Reviews</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">DFW</span>
+      <span class="stat-label">Service Area</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">Same<br/>Day</span>
+      <span class="stat-label">Response</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-layout">
+      <div class="services-intro">
+        <div class="section-eyebrow">What We Do</div>
+        <h2>Full-Service Home Improvement</h2>
+        <p>From small repairs to full remodels, Nikolay and his team bring the same care and quality to every job — no matter the size.</p>
+        <a href="#contact" class="btn-green">Get a Free Quote</a>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap">🚿</div>
+          <div class="service-title">Bathroom Remodels</div>
+          <p class="service-desc">Full remodels handled with precision. Tile, fixtures, vanities, and more — done right and on time.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">🎨</div>
+          <div class="service-title">Painting & Patching</div>
+          <p class="service-desc">Interior painting, drywall patching, and texture matching. Clean lines, no mess, beautiful results.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">🔧</div>
+          <div class="service-title">Plumbing Repairs</div>
+          <p class="service-desc">Faucet replacements, garbage disposals, leaks, and more. Reliable fixes at reasonable prices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">🏠</div>
+          <div class="service-title">General Handyman</div>
+          <p class="service-desc">All the jobs on your list — fixtures, doors, trim, hardware, and whatever else needs attention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-left">
+      <div class="section-eyebrow" style="color:var(--gold)">Who We Are</div>
+      <h2 style="color:var(--white);margin-bottom:1.5rem;">Built on Honesty.<br/>Proven by Results.</h2>
+      <p>MBS Home Improvement is led by Nikolay, a hands-on contractor who found his first clients through word of mouth and has kept them ever since. Every project is handled personally — no subcontracting, no shortcuts.</p>
+      <p>Clients consistently describe Nikolay as communicative, reliable, and honest. He walks you through the process, sticks to his quote, and doesn't leave until the job is done right.</p>
+      <div class="about-pills">
+        <span class="pill">Bathroom Remodels</span>
+        <span class="pill">Painting & Patching</span>
+        <span class="pill">Plumbing</span>
+        <span class="pill">Honest Pricing</span>
+        <span class="pill">Licensed LLC</span>
+      </div>
+      <a href="tel:19095344519" class="btn-gold">Call Nikolay Directly</a>
+    </div>
+    <div class="about-right">
+      <div class="about-nikolay">
+        <div class="nikolay-avatar">N</div>
+        <div class="nikolay-name">Nikolay</div>
+        <div class="nikolay-title">Owner & Lead Contractor</div>
+        <p class="nikolay-quote">"I treat every home like it's my own. That's the only way I know how to work."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS -->
+  <section class="hours" id="hours">
+    <div class="hours-layout">
+      <div class="hours-intro">
+        <div class="section-eyebrow">Availability</div>
+        <h2>Business Hours</h2>
+        <p>We're available six days a week. Call or text anytime during business hours and Nikolay will get back to you promptly.</p>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-row">
+          <span class="hours-day">Monday</span>
+          <span class="hours-time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Tuesday</span>
+          <span class="hours-time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Wednesday</span>
+          <span class="hours-time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Thursday</span>
+          <span class="hours-time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Friday</span>
+          <span class="hours-time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Saturday</span>
+          <span class="hours-time">8:00 AM – 7:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Sunday</span>
+          <span class="hours-closed-tag">Closed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-header">
+      <div>
+        <div class="section-eyebrow">Client Reviews</div>
+        <h2>What Homeowners Say</h2>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Nikolay did a great job with our bathroom remodel and was reliable and communicative throughout the process. I highly recommend and I'm so glad I found him. I will definitely use him again in the future.</p>
+        <div class="review-author">Jordan Vasilyuk</div>
+        <div class="review-date">7 months ago · Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I had some painting and patching done at my house, Nikolay and his team did an amazing job, they were honest and talked me through the process. I would definitely recommend!</p>
+        <div class="review-author">Maria Carvajal</div>
+        <div class="review-date">1 year ago · Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Nikolay had a tough job replacing a rusted kitchen faucet and garbage disposal and he did a great job. He is reliable, professional, personable and reasonably priced.</p>
+        <div class="review-author">Bose Thomas</div>
+        <div class="review-date">1 year ago · Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Nico did a fantastic job painting our entire house. He was communicative, on-time, and helpful. I plan to have him come do several other handy projects around the house.</p>
+        <div class="review-author">Juliana Passaro</div>
+        <div class="review-date">2 years ago · Google Review</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-layout">
+      <div class="contact-left">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2>Let's Talk About Your Project</h2>
+        <p>Fill out the form or call Nikolay directly. He responds the same day and will give you an honest, no-pressure quote.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-value">(909) 534-4519</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div>
+              <div class="contact-detail-label">Address</div>
+              <div class="contact-detail-value">8355 N Harwood Rd #1824<br/>North Richland Hills, TX 76180</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🗺️</div>
+            <div>
+              <div class="contact-detail-label">Service Area</div>
+              <div class="contact-detail-value">DFW Metroplex & surrounding areas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div>
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="John Smith"/>
+        </div>
+        <div class="form-row">
+          <div>
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-input" placeholder="(555) 000-0000"/>
+          </div>
+          <div>
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="you@email.com"/>
+          </div>
+        </div>
+        <div>
+          <label class="form-label">Service Needed</label>
+          <input type="text" class="form-input" placeholder="e.g. Bathroom remodel, painting, plumbing"/>
+        </div>
+        <div>
+          <label class="form-label">Tell Us More</label>
+          <textarea class="form-input" placeholder="Describe your project — size, timeline, any details that help..."></textarea>
+        </div>
+        <button class="btn-green" style="width:100%;padding:1.1rem;font-size:0.95rem;border-radius:10px;">Send My Request →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo-main">MBS Home Improvement</div>
+      <div class="footer-logo-sub">North Richland Hills, TX</div>
+    </div>
+    <div class="footer-copy">North Richland Hills, TX · DFW Metroplex</div>
+  </footer>
+
+</body>
+</html>
